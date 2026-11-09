@@ -1,39 +1,38 @@
-# API Intelligence — Development Roadmap
+# API Intelligence — Research & Development Roadmap
 
-**State:** Proposed, not scheduled. Milestones below describe exploratory work, not completed tasks.
+**Status:** Proposed experiments, not scheduled deliverables or completed engineering.
 
-## 01. Write a use-case brief for one target agent and identify its required actions.
+| Gate | Deliverable | Evidence required to progress |
+| --- | --- | --- |
+| 01 — Baseline | One task brief and manual source-research diary | Time and verification steps recorded; source requirements agreed |
+| 02 — Source register | Small, source-linked catalog and field/rights schema | Every record has provenance, coverage and “last checked” date |
+| 03 — Deterministic matcher | Rule-based shortlist with exclusion reasons | Hand-reviewed matching cases; no unauthorized sources selected |
+| 04 — Validation | Sample extracts and primary-source reconciliation | Tests document units, dates, missing fields and conflicts |
+| 05 — Decision packet | Human-readable shortlist, trade-offs and integration plan | Reviewer can reproduce a selection and see unknowns |
+| 06 — Benchmark | Repeat against manual workflow and a changed source | Report time, errors, rework and maintenance effort transparently |
+| 07 — Go/no-go | Product-scope decision | User value demonstrated without compromising reliability or rights |
 
-- [ ] Document evidence or outputs.
-- [ ] Review assumptions and known limitations before advancing.
+## Minimum acceptance checklist
 
-## 02. Create a small manually curated, source-linked API catalog.
+- [ ] A reproducible task specification and manually captured baseline exist.
+- [ ] Every recommended provider has documented authority, access and restrictions.
+- [ ] Essential required fields are tested on a small legitimate sample.
+- [ ] Invalid, unavailable and unlicensed candidates are explicitly excluded.
+- [ ] An independent reviewer can understand a recommendation without trusting an opaque model.
+- [ ] A repetition test measures whether keeping the catalog current is worth the effort.
+- [ ] No credentials or private provider responses are committed or publicly exposed.
 
-- [ ] Document evidence or outputs.
-- [ ] Review assumptions and known limitations before advancing.
+## Measurement plan
 
-## 03. Design the capability and permission schema and basic rule-based matching.
+Compare against the **same task done manually**. Record time to verified source bundle, required-field coverage, traceability, human-confirmed selection errors, and repeat-task maintenance time. Do not claim improved speed, accuracy or autonomous integration before a measured experiment.
 
-- [ ] Document evidence or outputs.
-- [ ] Review assumptions and known limitations before advancing.
+## Out of scope until validated
 
-## 04. Produce a human-readable comparison and bundle recommendation.
+Large public marketplaces, automatic API provisioning, OAuth and secrets custody, production SLAs, autonomous web/API execution and broad data resale.
 
-- [ ] Document evidence or outputs.
-- [ ] Review assumptions and known limitations before advancing.
+## Decisions to revisit
 
-## 05. Evaluate recommendations against human-selected baselines; then consider live integrations.
-
-- [ ] Document evidence or outputs.
-- [ ] Review assumptions and known limitations before advancing.
-
-## Definition of a useful first prototype
-
-A user can inspect one grounded example end-to-end, understand its inputs and assumptions, reproduce the output, and identify what is still unknown. A prototype is not a production-ready or fully validated system.
-
-## Open decisions
-
-- [ ] Who is the first user: individual developers, agent builders or enterprise teams?
-- [ ] Does the catalog include MCP servers, REST APIs, SDKs, or all three?
-- [ ] How will descriptions, prices and availability stay current?
-- [ ] What is the boundary for secrets, OAuth tokens and connector permissions?
+- Who has the recurring problem and will use the result?
+- Is an evaluated source packet valuable without live integration?
+- What input categories require paid licenses?
+- What evidence justifies adding agentic discovery rather than stronger manual tooling?
