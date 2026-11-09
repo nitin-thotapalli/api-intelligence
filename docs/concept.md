@@ -1,5 +1,7 @@
 # API Intelligence — Original Concept & Scope
 
+> **Current direction:** This is an archival record of the original API-bundling / agent-tool idea. The [README](../README.md) is the current product thesis: reduce analyst and agent-builder groundwork through task-specific data-source discovery, verification, comparison and reproducible source plans. A public API directory, credential orchestration and autonomous integration are not the first scope. Ideas below are historical hypotheses, not implemented features.
+
 ## Original idea (from Notion)
 
 > In today's era, for an agent to work we need access to tools. There are hundreds of tools an agent might require to work effectively. Putting them together and obtaining access takes a lot of work. Instead, there could be a system that puts together the APIs, bundles them, suggests appropriate options and analyzes them — like an intelligent portfolio manager, but for APIs.
