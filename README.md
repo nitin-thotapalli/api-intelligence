@@ -61,13 +61,66 @@ The first user is a technically capable analyst or builder (including me) assemb
 
 AI may assist with discovery, documentation search, and explanation; deterministic validation and explicit source references should remain central.
 
-## Relationship to the other projects
+## Product thesis: a decision tool, not another API catalog
 
-- **Project Matrix:** defines the business questions and uses verified financial, market, and operating inputs for company diagnosis and value-creation analysis.
-- **F&O Analyst:** may use evaluated market-data sources to inspect contracts, prices, volatility, and portfolio risk.
-- **Underwriting Engine:** may use vetted underlying-asset and contract data to support an auditable investment or risk assessment.
+The customer problem is **choosing and operationalizing trustworthy data and tools for a defined task**. A directory listing thousands of endpoints would not, by itself, solve that problem.
 
-API Intelligence is the **data-and-tool discovery layer**, not the investment recommendation engine or the company analysis itself.
+| Existing alternative | What it does well | Remaining friction to investigate |
+| --- | --- | --- |
+| Web search and documentation | Broad discovery of possible sources | Repeated manual verification and comparison |
+| Vendor directories or marketplaces | Provider and API listings | Often limited evidence of task-specific fit and data quality |
+| Internal spreadsheets / wikis | Institutional memory | Staleness, inconsistent evaluation and difficult reuse |
+| Manual analyst / developer judgment | Context-aware decisions | Time, inconsistent documentation and loss of provenance |
+
+**Differentiation hypothesis:** Deliver a *task-specific, evidence-backed source selection and integration decision*, not an automatically generated list of fashionable tools. Whether that is actually valuable must be tested against doing the same work manually.
+
+### Hypotheses to validate
+
+| Hypothesis | Test | What would weaken or disprove it |
+| --- | --- | --- |
+| Source discovery is a material bottleneck | Time a manual analyst research task; log the stages | Most time is spent on interpretation rather than acquisition |
+| Tool comparisons can be standardized | Evaluate the same requirements against multiple providers using a rubric | Real selection depends primarily on undocumented context |
+| A structured source register improves reliability | Ask a reviewer to trace each key value to its origin and definition | Reviewers cannot reproduce source selection or still distrust it |
+| Reuse reduces repeated research | Repeat a similar task with a maintained catalog | Maintenance exceeds saved effort or sources become stale |
+| AI assistance helps, if grounded | Compare rule-based search with AI-assisted ranking on a human-reviewed set | AI adds unsupported claims or worsens accuracy |
+
+### The core information model
+
+A useful source record could contain **provider, capability, fields, geography, coverage, frequency, last verified date, documentation URL, licensing, authentication pattern, cost, rate limits, sample schema, data-quality checks, known gaps, and reviewer notes**.
+
+A task record should contain its **question, required facts, acceptable freshness, output format, permitted sources, security constraints and evaluation criteria**. Matching these two records gives a reasoned shortlist. It should never be represented as automated verification without actually running the checks.
+
+## How I would measure value
+
+Metrics must connect the product mechanism to analyst outcomes, not just the size of the API catalog.
+
+| Dimension | Candidate metric | Operational definition / guardrail |
+| --- | --- | --- |
+| Efficiency | Time to verified, usable data | Time from task brief to an independently reviewed usable input dataset; compare against a manual baseline |
+| Completeness | Required-field coverage | Verified required fields available / total required fields |
+| Trust | Source traceability rate | Material inputs with source URL, date, unit and definition / all material inputs |
+| Correctness | Source-selection error rate | Human-reviewed incorrect or unusable recommendations / total evaluated recommendations |
+| Repeatability | Rework and reuse | Time or checks needed to repeat a similar task after source updates |
+| Practicality | Effective integration effort | Human hours needed to get from shortlist to a working, permitted sample |
+| Guardrails | Security and licensing violations | Unauthorized access, exposed secrets or prohibited redistribution: **zero tolerated** in a prototype |
+
+Proposed **north-star proxy:** *time to a verified, decision-ready source bundle*, subject to **no material source-selection errors**. This is a hypothesis for evaluation—not an existing product metric, benchmark, or achieved improvement.
+
+## Explicit first release and out-of-scope work
+
+**First release:** one financial/operating research question, a curated source catalog, a requirements-to-source matching rubric, sample-data validation and a reviewable recommendation report.
+
+**Not yet:** an API marketplace, live credential vault, autonomous OAuth, production connectors, unrestricted agent tool execution, guaranteed current pricing, or universal data quality scores.
+
+## Where it sits relative to other projects
+
+API Intelligence is a **horizontal source-and-tool research idea**. It can stand on its own.
+
+- **Project Matrix** asks how a business performs and what could improve it. It may use verified sources discovered here, but **it is not a required downstream product**.
+- **F&O Analyst** is an independent **capital-markets and derivatives** research project. It may separately need licensed, well-described contract and market-data APIs.
+- **Underwriting Engine** is an independent **underlying-asset / investment-thesis assessment** concept, currently more closely related to F&O Analyst than to Matrix.
+
+There is **no shared running platform, no integration, and no mandated four-product sequence**. Shared data-source evaluation practices are a possibility, not an architectural dependency.
 
 ## First practical milestone
 
