@@ -4,8 +4,6 @@
 
 API Intelligence is an independent product-research concept for discovering, evaluating, and organizing the APIs, datasets, and tools needed to answer a business or analytical question. It begins with a practical frustration: **before an analyst can test a hypothesis, they often spend hours locating data, checking its credibility, reconciling definitions, and connecting incompatible sources.**
 
-**Status:** Concept / research. No deployed product, validated integrations, or measured time savings are claimed.
-
 ## Why API Intelligence?
 
 Consider an analyst beginning a company analysis in Project Matrix. They need financial statements, filings, price history, industry data, comparable companies, and perhaps operating indicators. Those inputs may live across public filings, data vendors, spreadsheets, websites, and APIs. Finding a source is only the beginning: **is it authoritative, current, licensed for this use, consistent with other sources, and usable in a repeatable workflow?**
