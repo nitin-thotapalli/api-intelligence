@@ -39,4 +39,3 @@ AI developers and teams assembling tool-using agents (hypothesis; not validated)
 
 ## Source and provenance
 
-[Original Notion notes](https://app.notion.com/p/412e7cf19bdd80c49c63d1b22bbf37c3). Additional design decisions in this document are **proposals**, not claims taken from the source notes.
